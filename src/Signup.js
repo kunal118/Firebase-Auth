@@ -21,9 +21,12 @@ const Signup = () => {
             setError("")
             setLoading(true)
             await signup(emailRef.current.value,passwordRef.current.value)
+            setError("")
         }
-        catch{
-            setError("failed to create account")
+        catch(err){
+            
+            setError("failed")
+            console.log(err);
         }
         setLoading(false)
         
